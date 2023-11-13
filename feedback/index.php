@@ -68,12 +68,13 @@ if(isset($_POST['submit'])){
 <style>
     .form{
        position: absolute;
-       top:30%;
+       top:35%;
        width: 10vw;
        left:45vw;
-       right: 45vw;
        height: 100vh;
-       
+       display: flex;
+       flex-flow: column nowrap;
+       align-items: center;
 
     }
 </style>

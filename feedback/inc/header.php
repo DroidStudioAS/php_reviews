@@ -46,11 +46,14 @@ include('config/database.php');
  
    
     .logo{
+        padding: 0.5%;
         width: 10vw;
         height: 20vh;
         position:absolute;
-        width: 30%;
-        left: 35%;
         top: 15%;
+        left: 45vw;
+        border-radius: 45%;
+        border-style: solid;
+        border-color: #7ED957 ;
     }
 </style>
