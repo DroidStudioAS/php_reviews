@@ -45,19 +45,27 @@ if(isset($_POST['submit'])){
     <form method="POST" 
         class="form">
         <h1>Feedback</h1>
-        <div>
+        <div class="form_field">
+        <div class="label_container">
         <label for="name">Name </label>
+        </div>
+
         <input type="text" name="name" id="name">
         <div class="err"> <?php echo $nameErr ? $nameErr:"" ?> </div>
         </div>
-        <div>
+        <div class="form_field">
+
+            <div  class="label_container">
             <label for="email">Email</label>
+            </div>
             <input type="email" name="email" id="email">
             <div class="err"> <?php echo $emailErr ? $emailErr:"" ?> </div>
         </div>
-        <div>
-            <label for="feedback">Feedback</label>
-            <input type="text" name="feedback" id="feedback">
+        <div class="form_field">
+            <div  class="label_container">
+            <label for="feedback">Feedback</label><br>
+            </div>
+            <input class="feedback_field" type="text" name="feedback" id="feedback">
             <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
         <input name="submit" type="submit" value="Send">
@@ -68,15 +76,38 @@ if(isset($_POST['submit'])){
 <style>
     .form{
        position: absolute;
-       top:35%;
-       width: 10vw;
-       left:45vw;
-       height: 100vh;
+       top:40%;
+       width: 50vw;
+        left: 25%;
+       padding: 2%;
+
        display: flex;
        flex-flow: column nowrap;
        align-items: center;
 
+       background: hsla(102, 63%, 60%, 1);
+        background: linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
+        background: -moz-linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
+        background: -webkit-linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7ED957", endColorstr="#0CC0DF", GradientType=1 );
+
+        border-radius: 5%;
+
+
     }
+    .form_field{
+        margin: 1%;
+    }
+    .feedback_field{
+        width: 50vw;
+        height: 20vh;
+        text-align: start;
+    }
+    .label_container{
+        text-align: center;
+    }
+    
+   
     .err{
         color: red;
     }
