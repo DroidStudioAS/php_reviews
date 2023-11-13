@@ -41,7 +41,6 @@ include("inc/footer.php");
     <title>Document</title>
 </head>
 <body>
-    <h1>Feedbacks</h1>
     <!-- how to use conditionals within html (called a shorthand)-->
     <!--if shorthand-->
     <?php if(empty($feedback)): ?>
@@ -70,7 +69,7 @@ include("inc/footer.php");
 <style>
     .feedback_container{
        position: absolute;
-       top:40%;
+       top:44%;
        width: 10vw;
        left:45vw;
        height: 100vh;
@@ -89,9 +88,10 @@ include("inc/footer.php");
         color: black;
         padding: 4%;
         border-radius: 5%;
-        border-color: ghostwhite;
-        width: 50vw;
-    }
+        border-color: #0CC0DF;
+        width:55vw;
+        color: white;
+        }
     .card_name{
         font-size: 100%;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -110,6 +110,17 @@ include("inc/footer.php");
         border: 0.5%;
         border-style: solid;
         border-radius: 5%;
-        border-color: ghostwhite;
+        border-color:#0CC0DF;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    }
+    @media(min-width:600px){
+        .card_container{
+            width: 30vw;
+            left:35vw;
+        }
+        .feedback_container{
+            top: 46%;
+        }
     }
 </style>

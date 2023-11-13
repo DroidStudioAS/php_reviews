@@ -76,9 +76,9 @@ if(isset($_POST['submit'])){
 <style>
     .form{
        position: absolute;
-       top:40%;
+       top:44%;
        width: 50vw;
-        left: 25%;
+       left: 25vw;
        padding: 2%;
 
        display: flex;
@@ -92,11 +92,13 @@ if(isset($_POST['submit'])){
         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7ED957", endColorstr="#0CC0DF", GradientType=1 );
 
         border-radius: 5%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: whitesmoke;
 
 
     }
     .form_field{
-        margin: 1%;
+        margin: 0.5%;
     }
     .feedback_field{
         width: 50vw;
@@ -109,6 +111,20 @@ if(isset($_POST['submit'])){
     
    
     .err{
-        color: red;
+        color: #541e1b;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    @media(min-width:600px) {
+        .form{
+            top: 46%;
+            width: 30vw;
+            left: 35vw;
+        }
+        .feedback_field{
+            width: 25vw;
+        }
+        
     }
 </style>
