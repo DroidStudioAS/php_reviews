@@ -48,17 +48,17 @@ if(isset($_POST['submit'])){
         <div>
         <label for="name">Name </label>
         <input type="text" name="name" id="name">
-        <div> <?php echo $nameErr ? $nameErr:"" ?> </div>
+        <div class="err"> <?php echo $nameErr ? $nameErr:"" ?> </div>
         </div>
         <div>
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
-            <div> <?php echo $emailErr ? $emailErr:"" ?> </div>
+            <div class="err"> <?php echo $emailErr ? $emailErr:"" ?> </div>
         </div>
         <div>
             <label for="feedback">Feedback</label>
             <input type="text" name="feedback" id="feedback">
-            <div> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
+            <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
         <input name="submit" type="submit" value="Send">
     </form>
@@ -76,5 +76,8 @@ if(isset($_POST['submit'])){
        flex-flow: column nowrap;
        align-items: center;
 
+    }
+    .err{
+        color: red;
     }
 </style>
