@@ -15,7 +15,6 @@ include('config/database.php');
         </h1>
     </div>
 
-    </div>
         <div class="container">
         <div class="navContainer">
         <span>
@@ -60,7 +59,7 @@ include('config/database.php');
         height: 25vh;
         position:absolute;
         top: 16%;
-        left: 42.5vw;
+        left: 42vw;
         border-radius: 45%;
         border-style: solid;
         border-color: #7ED957 ;
