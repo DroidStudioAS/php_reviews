@@ -1,15 +1,6 @@
 <?php 
 include('config/database.php');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.A Software</title>
-</head>
-<body>
-    <div class="title">
+/* <div class="title">
         <h1>
             S.A Software
         </h1>
@@ -30,56 +21,102 @@ include('config/database.php');
         </div>
         <img class="logo" src="/Aleksandar_Smiljanic/feedback/inc/logo.png">
     </nav>
-
+*/
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A Software</title>
+</head>
+<body>
+    <!--Main container for header-->
+    <div class="nav_main_container">
+   
+    <div class="title_container">
+        S.A Software
+    </div>
+    <!--Navigation item container-->
+    <nav class="nav_item_container">
+        <span>
+           <a class="nav_item" href="/Aleksandar_Smiljanic/feedback"> Home</a>
+        </span>
+        <span>
+            <a class="nav_item" href="/Aleksandar_Smiljanic/feedback/feedback.php"> Feedback</a>
+        </span>
+        <span>
+            <a class="nav_item" href="/Aleksandar_Smiljanic/feedback/about.php"> About</a>
+        </span>
+    </nav>
+    <!--Logo container-->
+    <div class="logo_container">
+        <img class="logo" src="/Aleksandar_Smiljanic/feedback/inc/logo.png"/>
+    </div>
+    </div>
 </body>
 </html>
 <style>
-   
-    .container{
+
+    .nav_main_container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 13vh;
+        width: 100%;
+       
+        background-color: #7ED957;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 30%;
+        
+    }
+
+    .title_container{
+        font-size: xx-large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: white;   
+        
+      
+    }
+
+    .nav_item{
+        font-size: x-large;
+        text-decoration: none;
+        color: white;
+       
+        
+        
+    }
+    .nav_item_container{
         display: flex;
         flex-flow: row nowrap;
+        align-items: center;
         justify-content: center;
-        position:absolute;
-        position: absolute;
-        background-color: #7ED957;
-        left: 0%;
-        right: 0%;
-        top: 10%;
-        padding-top: 1%;
-        font-size: larger;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color:white
+        gap: 20%;
+    
     }
-   
- 
-   
+  
+    .logo_container{
+        position: absolute;
+        top: 13vh;
+        
+
+    }
     .logo{
-        padding: 0.5%;
-        width: 15vw;
+        width: 10vw;
         height: 25vh;
-        position:absolute;
-        top: 16%;
-        left: 42vw;
-        border-radius: 45%;
-        border-style: solid;
-        border-color: #7ED957 ;
     }
-    .title{
-        background-color: #7ED957;
-        width: 100vw;
-        color: white;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        text-align: center;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
+
     @media(max-width:600px){
         .logo{
-            width: 20vw;
-            height: 25vh;
-            left: 40vw;
-        }
+        width: 20vw;
+        height: 30vh;
+    }
     }
  
 </style>
