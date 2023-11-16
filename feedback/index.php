@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
             </textarea>
             <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
-        <input name="submit" type="submit" value="Send">
+        <input class="button" name="submit" type="submit" value="Send">
         </form>
     
 
@@ -84,17 +84,19 @@ if(isset($_POST['submit'])){
 <style>
     .form_container{
         position: absolute;
-        top: 40%;
+        top: 38%;
         left: 35%;
 
         width: 30vw;
-        height: 50vh;
+        height: 60vh;
         
         display: flex;
         flex-flow: column nowrap;
 
         justify-content: center;
         align-items: center;
+
+        border-radius: 5%;
 
         background: hsla(102, 63%, 60%, 1);
 
@@ -201,7 +203,6 @@ if(isset($_POST['submit'])){
         text-align: left;
         resize: none;
 
-        color: #7ED957;
         height: 10vh;
         width: 120%;
         padding: 4%;
@@ -210,6 +211,43 @@ if(isset($_POST['submit'])){
         transition: all 0.3s ease;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
+.button{
+  background-image: linear-gradient(92.88deg, 
+  #7ED957 9.16%, 
+  #5BD181 43.89%, 
+  #0CC0DF 64.72%);
+
+
+  border-radius: 8px;
+  border-style: solid;
+  border-color: white;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button ::hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
 
 
     @media(max-width:600px) {
@@ -223,6 +261,7 @@ if(isset($_POST['submit'])){
         top: 0%;
     }
     }   
+ 
     
 
    
