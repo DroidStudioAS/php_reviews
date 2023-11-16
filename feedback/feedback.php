@@ -47,7 +47,8 @@ include("inc/footer.php");
         <p class="emptymsg">There is no feedback</p>
     <?php endif; ?>
     <!--ForEach shorthand-->
-    <div class="feedback_container">
+    <div class="container">
+        <div class="feedback_container">
     <!--pages logic -->
     <?php
      $itemsPerPage = 4; // Number of items per page
@@ -74,6 +75,10 @@ include("inc/footer.php");
         </div>
     </div>
     <?php endforeach ?>
+    </div></div>
+    
+    
+    <!--
     <div class="pagination">
         <?php if ($page > 1) : ?>
             <a href="?page=<?php echo $page - 1; ?>">
@@ -94,15 +99,17 @@ include("inc/footer.php");
                 <img class="next_arr" src="/Aleksandar_Smiljanic/feedback/inc/arrow.png">
             </a>
         <?php endif; ?>
-    </div>
-    </div>
-
+        -->
    
 </body>
 </html>
 <style>
 
-
+.container{
+    display: flex;
+    align-items: center;
+   
+}
 .pagination{
     display: flex;
     flex-flow: row nowrap;
@@ -128,16 +135,16 @@ include("inc/footer.php");
 }
     .feedback_container{
        position: absolute;
-       top:44%;
-       width: 10vw;
-       left:45vw;
-       height: 100vh;
+       top: 10vh;
+       width: 30vw;
+       height: 60vh;
        display: flex;
-       flex-flow: column nowrap;
+       flex-flow: column wrap;
        align-items: center;
        gap:2%
-        
     }
+   
+   
     .card_container{
         background: hsla(102, 63%, 60%, 1);
         background: linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
@@ -148,8 +155,8 @@ include("inc/footer.php");
         padding: 4%;
         border-radius: 5%;
         border-color: #0CC0DF;
-        width:55vw;
         color: white;
+        height: 25vh;
         }
     .card_name{
         font-size: 100%;
