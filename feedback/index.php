@@ -41,10 +41,10 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
-
-    <form method="POST" 
-        class="form">
-        <h1>Feedback</h1>
+    
+      
+        <form class="form_container" method="POST" >
+            <h3 class="form_header">Leave your review</h3>
         <div class="form_field">
         <div class="label_container">
         <label for="name">Name </label>
@@ -69,14 +69,71 @@ if(isset($_POST['submit'])){
             <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
         <input name="submit" type="submit" value="Send">
-    </form>
+        </form>
+    
+
+
+
+<!--    <form method="POST" 
+        class="form">
+        <h1>Feedback</h1>
+        
+    </form> -->
 
 </body>
 </html>
 <style>
-    .form{
+    .form_container{
+        position: absolute;
+        top: 40%;
+        left: 35%;
+
+        width: 30vw;
+        height: 50vh;
+        
+        display: flex;
+        flex-flow: column nowrap;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: #0CC0DF;
+        color: white;
+        
+    }
+    .form_container h3{
+       font-size: xx-large;
+        
+    } 
+    .form_container input{
+        margin: 4%;
+    }
+    .form_header{
        position: absolute;
-       top:44%;
+       top: 0%;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       text-align: center; 
+    }
+
+
+
+    @media(max-width:600px) {
+        .form_container{
+            top: 43vh;
+            width: 50vw;
+            left: 25vw;    
+    }
+    .form_header{
+        position: absolute;
+        top: 0%;
+    }
+    }   
+    
+
+
+    /*.form{
+       position: absolute;
+       top:30vh;
        width: 50vw;
        left: 25vw;
        padding: 2%;
@@ -116,15 +173,5 @@ if(isset($_POST['submit'])){
         text-decoration: underline;
     }
 
-    @media(min-width:600px) {
-        .form{
-            top: 46%;
-            width: 30vw;
-            left: 35vw;
-        }
-        .feedback_field{
-            width: 25vw;
-        }
-        
-    }
+   */
 </style>
