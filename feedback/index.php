@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
             <div  class="label_container">
             <label class="form_label" for="feedback">Feedback</label><br>
             </div>
-            <textarea onclick="moveCursorToStart(this)" class="feedback_field" type="text" name="feedback" id="feedback" autofocus>
+            <textarea onclick="moveCursorToStart(this)" class="feedback_field" type="text" name="feedback" id="feedback">
             </textarea>
             <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
