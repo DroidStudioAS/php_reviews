@@ -38,34 +38,33 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
-      
         <form class="form_container" method="POST" >
-            <h3 class="form_header">Leave your review</h3>
+            <h4 class="form_header">Leave your review</h4>
         <div class="form_field">
         <div class="label_container">
-        <label for="name">Name </label>
+        <label class="form_label" for="name">Name </label>
         </div>
-
-        <input type="text" name="name" id="name">
+        <input class="form_input" type="text" name="name" id="name">
         <div class="err"> <?php echo $nameErr ? $nameErr:"" ?> </div>
         </div>
         <div class="form_field">
 
             <div  class="label_container">
-            <label for="email">Email</label>
+            <label class="form_label" for="email">Email</label>
             </div>
-            <input type="email" name="email" id="email">
+            <input class="form_input" type="email" name="email" id="email">
             <div class="err"> <?php echo $emailErr ? $emailErr:"" ?> </div>
         </div>
         <div class="form_field">
             <div  class="label_container">
-            <label for="feedback">Feedback</label><br>
+            <label class="form_label" for="feedback">Feedback</label><br>
             </div>
-            <input class="feedback_field" type="text" name="feedback" id="feedback">
+            <textarea onclick="moveCursorToStart(this)" class="feedback_field" type="text" name="feedback" id="feedback" autofocus>
+            </textarea>
             <div class="err"> <?php echo $bodyErr ? $bodyErr:"" ?> </div>
         </div>
         <input name="submit" type="submit" value="Send">
@@ -97,8 +96,76 @@ if(isset($_POST['submit'])){
         justify-content: center;
         align-items: center;
 
-        background-color: #0CC0DF;
+        background: hsla(102, 63%, 60%, 1);
+
+        background: linear-gradient(135deg, 
+        hsla(102, 63%, 60%, 1) 0%, 
+        hsla(108, 61%, 61%, 1) 6%, 
+        hsla(118, 57%, 63%, 1) 14%, 
+        hsla(128, 56%, 62%, 1) 21%, 
+        hsla(136, 56%, 60%, 1) 28%, 
+        hsla(142, 57%, 58%, 1) 33%, 
+        hsla(149, 57%, 56%, 1) 40%, 
+        hsla(153, 57%, 55%, 1) 44%, 
+        hsla(158, 57%, 54%, 1) 50%, 
+        hsla(162, 57%, 52%, 1) 55%, 
+        hsla(167, 58%, 51%, 1) 61%, 
+        hsla(170, 59%, 50%, 1) 65%, 
+        hsla(173, 63%, 48%, 1) 70%, 
+        hsla(176, 65%, 47%, 1) 74%, 
+        hsla(178, 69%, 46%, 1) 78%, 
+        hsla(182, 75%, 45%, 1) 85%, 
+        hsla(185, 80%, 46%, 1) 90%, 
+        hsla(186, 84%, 46%, 1) 94%, 
+        hsla(189, 90%, 46%, 1) 100%);
+
+        background: -moz-linear-gradient(135deg, 
+        hsla(102, 63%, 60%, 1) 0%, 
+        hsla(108, 61%, 61%, 1) 6%, 
+        hsla(118, 57%, 63%, 1) 14%, 
+        hsla(128, 56%, 62%, 1) 21%, 
+        hsla(136, 56%, 60%, 1) 28%, 
+        hsla(142, 57%, 58%, 1) 33%, 
+        hsla(149, 57%, 56%, 1) 40%, 
+        hsla(153, 57%, 55%, 1) 44%, 
+        hsla(158, 57%, 54%, 1) 50%, 
+        hsla(162, 57%, 52%, 1) 55%, 
+        hsla(167, 58%, 51%, 1) 61%, 
+        hsla(170, 59%, 50%, 1) 65%, 
+        hsla(173, 63%, 48%, 1) 70%, 
+        hsla(176, 65%, 47%, 1) 74%, 
+        hsla(178, 69%, 46%, 1) 78%, 
+        hsla(182, 75%, 45%, 1) 85%, 
+        hsla(185, 80%, 46%, 1) 90%, 
+        hsla(186, 84%, 46%, 1) 94%, 
+        hsla(189, 90%, 46%, 1) 100%);
+
+        background: -webkit-linear-gradient(135deg, 
+        hsla(102, 63%, 60%, 1) 0%, 
+        hsla(108, 61%, 61%, 1) 6%, 
+        hsla(118, 57%, 63%, 1) 14%, 
+        hsla(128, 56%, 62%, 1) 21%, 
+        hsla(136, 56%, 60%, 1) 28%, 
+        hsla(142, 57%, 58%, 1) 33%, 
+        hsla(149, 57%, 56%, 1) 40%, 
+        hsla(153, 57%, 55%, 1) 44%,        
+        hsla(158, 57%, 54%, 1) 50%, 
+        hsla(162, 57%, 52%, 1) 55%, 
+        hsla(167, 58%, 51%, 1) 61%, 
+        hsla(170, 59%, 50%, 1) 65%, 
+        hsla(173, 63%, 48%, 1) 70%, 
+        hsla(176, 65%, 47%, 1) 74%, 
+        hsla(178, 69%, 46%, 1) 78%, 
+        hsla(182, 75%, 45%, 1) 85%, 
+        hsla(185, 80%, 46%, 1) 90%, 
+        hsla(186, 84%, 46%, 1) 94%, 
+        hsla(189, 90%, 46%, 1) 100%);
+
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7ed957", endColorstr="#77D85F", GradientType=1 );
+        
         color: white;
+        
+        
         
     }
     .form_container h3{
@@ -115,6 +182,34 @@ if(isset($_POST['submit'])){
        text-align: center; 
     }
 
+    .form_field{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form_input{
+        width: 100%;
+        padding: 4%;
+        border: 1px solid #7ED957;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .feedback_field{
+        text-align: left;
+        resize: none;
+
+        color: #7ED957;
+        height: 10vh;
+        width: 120%;
+        padding: 4%;
+        border: 1px solid #7ED957;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 
 
     @media(max-width:600px) {
@@ -130,48 +225,5 @@ if(isset($_POST['submit'])){
     }   
     
 
-
-    /*.form{
-       position: absolute;
-       top:30vh;
-       width: 50vw;
-       left: 25vw;
-       padding: 2%;
-
-       display: flex;
-       flex-flow: column nowrap;
-       align-items: center;
-
-       background: hsla(102, 63%, 60%, 1);
-        background: linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
-        background: -moz-linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
-        background: -webkit-linear-gradient(315deg, hsla(102, 63%, 60%, 1) 0%, hsla(189, 90%, 46%, 1) 100%);
-        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7ED957", endColorstr="#0CC0DF", GradientType=1 );
-
-        border-radius: 5%;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color: whitesmoke;
-
-
-    }
-    .form_field{
-        margin: 0.5%;
-    }
-    .feedback_field{
-        width: 50vw;
-        height: 20vh;
-        text-align: start;
-    }
-    .label_container{
-        text-align: center;
-    }
-    
    
-    .err{
-        color: #541e1b;
-        text-align: center;
-        text-decoration: underline;
-    }
-
-   */
 </style>
