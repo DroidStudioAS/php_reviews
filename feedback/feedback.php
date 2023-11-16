@@ -48,7 +48,20 @@ include("inc/footer.php");
     <?php endif; ?>
     <!--ForEach shorthand-->
     <div class="feedback_container">
-    <?php foreach($feedback as $item): ?>
+    <!--pages logic -->
+    <?php
+     $itemsPerPage = 4; // Number of items per page
+    $page = isset($_GET['page']) ? $_GET['page'] : 1; // Get current page number from URL
+    $start = ($page - 1) * $itemsPerPage; // Calculate starting index for the displayed items
+
+    // Assuming $feedback contains the retrieved feedback data
+    $totalItems = count($feedback); // Total number of feedback items
+    $totalPages = ceil($totalItems / $itemsPerPage); // Calculate total pages
+
+    $pagedFeedback = array_slice($feedback, $start, $itemsPerPage); // Get feedback for the current page
+
+    foreach ($pagedFeedback as $index => $item) :
+    ?>
     <div class="card_container">
         <div class="card_name">
             <?php echo 'By: ' . $item['fb_name'] ."</br>". " on:" . $item['fb_date'] ?>
@@ -61,12 +74,58 @@ include("inc/footer.php");
         </div>
     </div>
     <?php endforeach ?>
+    <div class="pagination">
+        <?php if ($page > 1) : ?>
+            <a href="?page=<?php echo $page - 1; ?>">
+            <img class="prev_arr" src="/Aleksandar_Smiljanic/feedback/inc/arrow.png">
+            </a>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+            <a href="?page=<?php echo $i; ?>" <?php echo ($page === $i) ? 'class="active"' : ''; ?>>
+               <span class="page_index">
+                 <?php echo $i; ?>
+               </span> 
+            </a>
+        <?php endfor; ?>
+
+        <?php if ($page < $totalPages) : ?>
+            <a href="?page=<?php echo $page + 1; ?>">
+                <img class="next_arr" src="/Aleksandar_Smiljanic/feedback/inc/arrow.png">
+            </a>
+        <?php endif; ?>
+    </div>
     </div>
 
    
 </body>
 </html>
 <style>
+
+
+.pagination{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+    font-size: x-large;
+    }
+.prev_arr{
+    width: 100%;
+    height:100%;
+    transform: scaleX(-1);
+}
+.page_index{
+    color: #0CC0DF;
+    text-decoration: none;
+}
+.page_index:visited{
+    text-decoration: none;
+}
+.next_arr{
+    width: 100%;
+    height:100%;
+}
     .feedback_container{
        position: absolute;
        top:44%;
@@ -114,6 +173,7 @@ include("inc/footer.php");
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
     }
+
     @media(min-width:600px){
         .card_container{
             width: 30vw;
