@@ -243,13 +243,6 @@ if(isset($_POST['submit'])){
   transition-duration: .1s;
 }
 
-@media (min-width: 768px) {
-  .button-36 {
-    padding: 0 2.6rem;
-  }
-}
-
-
     @media(max-width:600px) {
         .form_container{
             top: 43vh;
@@ -260,7 +253,16 @@ if(isset($_POST['submit'])){
         position: absolute;
         top: 0%;
     }
+    .feedback_field{
+            width: 100%;
+        }
     }   
+    @media(min-width:600px) and (max-width:740px){
+        .feedback_field{
+            width: 100%;
+        }
+    }
+  
  
     
 
