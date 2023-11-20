@@ -282,4 +282,33 @@ include("inc/footer.php");
             top: 46%;
         }
     }
+    @media (max-width:600px){
+        .feedback_container{
+            flex-flow: column nowrap;
+            top: 44%;
+            left: 20vw;
+            width: 60vw;
+            height: 100vh;
+            gap: 2%;
+        }
+        .card_container{
+            width: 50vw;
+            height: 100%;
+        }
+        .pagination{
+            position: absolute;
+            left: 30%;
+           bottom: -50%;
+
+            width: 12vw;
+            height: 2vh;
+        }
+        .prev_arr{
+            width: 10vw;
+        }
+        .next_arr{
+            width: 10vw;
+        }
+        
+    }
 </style>
